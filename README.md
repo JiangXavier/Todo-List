@@ -80,6 +80,13 @@ func ConnRedis() {
 `go mod tidy`
 #### 运行
 `go run main.go`
+#### Docker部署
+- 在命令行执行下面文件生成docker image：
+`docker docker build . -t my_docker_test`
+- . 表示当前目录， -t 后面加自己想取名字
+- 运行`docker image ls`来查看你当前生成或者是已经拉取的`image`
+- 下面是最后一步，启动docker:
+`docker run -p 5080:5080 my_docker_test `
 ### 备注
 - `mysql`是存储主要数据
 - `redis`用来存储备忘录的浏览次数
